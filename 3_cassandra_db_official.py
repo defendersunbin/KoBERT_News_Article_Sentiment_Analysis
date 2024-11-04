@@ -9,7 +9,7 @@ from cassandra.auth import PlainTextAuthProvider
 import uuid
 
 # Step 1: CSV File Read
-df = pd.read_csv('csv/아이돌.csv')
+df = pd.read_csv('csv/아이돌_뉴스.csv')
 
 # Step 2: Model Setup
 def set_seed(seed=42):

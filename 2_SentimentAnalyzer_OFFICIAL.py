@@ -67,11 +67,11 @@ def hannanum_tokenize(text):
 
 df['hannanum_tokens'] = df['content'].apply(hannanum_tokenize)
 
-# 최종 결과 확인
-print(df[['content', 'result', 'hannanum_tokens']])
+# 최종 확인
+print(df[['date', 'link', 'content', 'sentiment', 'hannanum_tokens']])
 
 # csv 파일로 저장
-df.to_csv('csv/아이돌_뉴스_1.csv', index=False)
+df.to_csv('csv/아이돌_뉴스.csv', index=False)
 
 # 결과 확인
-print(df[['content', 'result']])
+print(df[['date', 'link', 'content', 'sentiment']])
