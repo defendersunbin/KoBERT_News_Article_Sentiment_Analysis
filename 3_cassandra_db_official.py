@@ -9,7 +9,7 @@ from cassandra.auth import PlainTextAuthProvider
 import uuid
 
 # Step 1: CSV File Read
-df = pd.read_csv('csv/아이돌_뉴스.csv')
+df = pd.read_csv('csv/뉴스_크롤링.csv')
 
 # Step 2: Model Setup
 def set_seed(seed=42):
@@ -87,7 +87,10 @@ for index, row in df.iterrows():
     INSERT INTO news_sentiment_official (id, content, result, date, link) VALUES (%s, %s, %s, %s, %s)
     """, (doc['id'], doc['content'], doc['result'], doc['date'], doc['link']))
 
+
 # Closing the connection
 cluster.shutdown()
 
 print("Data successfully inserted into Cassandra.")
+
+

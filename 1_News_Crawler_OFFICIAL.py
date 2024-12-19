@@ -26,6 +26,7 @@ def makeUrl(search, start_pg, end_pg):
     for i in range(start_pg, end_pg + 1):
         page = makePgNum(i)
         url = f"https://search.naver.com/search.naver?where=news&sm=tab_pge&query={search}&sort=0&photo=0&field=0&pd=3&ds={target_date_str}&de={now.strftime('%Y.%m.%d')}&start={page}"
+        #https://search.naver.com/search.naver?where=news&sm=tab_pge&query=뉴진스&sort=0&photo=0&field=0&pd=3&de=2024.11.26
         urls.append(url)
 
     print("생성 url: ", urls)
@@ -131,6 +132,6 @@ print("중복 제거 후 행 개수: ", len(news_df))
 # 데이터 프레임 저장
 now = datetime.datetime.now()
 news_df = news_df.sort_values(by='date', ascending=False)
-news_df.to_csv('csv/아이돌.csv', encoding='utf-8-sig', index=False)
+news_df.to_csv('csv/뉴스_크롤링.csv', encoding='utf-8-sig', index=False)
 
 print("크롤링 완료! 결과를 csv 파일로 저장했습니다.")
